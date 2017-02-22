@@ -1,42 +1,28 @@
-<p align="center">
-<img src="https://github.com/AospExtended/manifest/raw/7.1.1/aex_logo.png" width="320px" height="320px" > 
-</p>
-
-AospExtended Nougat
+The Android Open Source Project For LG G3 D855 - Nougat 7.1.1
 ===========
-AospExtended is just an extension to AOSP, through which we 
-are trying to provide a stock AOSP experience along with some important 
-customization features. We have cherry-picked the features from many 
-other projects and hence we are very thankful to them.
 
-##Credits
-* [**JDCTeam (Base)**](https://github.com/AOSP-JF-MM)
-* [**DirtyUnicorns**](https://github.com/DirtyUnicorns)
-* [**AOSiP**](https://github.com/AOSIP)
-* [**ZephyrOS**](https://github.com/Zephyr-OS)
-* [**TurboROM**](https://github.com/TurboROM)
-* [**TeamSubstratum(Theme Engine)**](https://github.com/TeamSubstratum)
-* [**SlimRoms**](https://github.com/SlimRoms)
-* [**BlissRoms**](https://github.com/BlissRoms)
-* [**LineageOS/Cyanogenmod**](https://github.com/LineageOS)
-* [**Nitrogen Project**](https://github.com/nitrogen-project)
-* [**Pure Nexus**](https://github.com/PureNexusProject)
-* [**GZR Community**](https://plus.google.com/communities/109330559573276360638)
 
-##How to Build?
+Getting Started
+---------------
 
-To initialize your local repository using the AospExtended trees, use a 
-command like this:
-````bash
-repo init -u git://github.com/AospExtended/manifest.git -b 7.1.1
-```
+To get started with Android, you'll need to get familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
+
+To initialize your local repository using the AOSP trees, use a command like this:
+
+    repo init -u git://github.com/G3-aosp-N//platform_manifest.git -b aosp-7.1.1
+
 Then to sync up:
-````bash
-repo sync -c -jx --force-sync
-```
-Finally to build:
-````bash
-. build/envsetup.sh
-lunch aosp_device_codename
-mka bacon
-```
+
+    repo sync
+
+Set up build enviroment
+
+    . build/envsetup.sh
+
+Select device
+
+    lunch d855 userdebug
+
+Compile the rom
+
+    mka otapackage
