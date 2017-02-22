@@ -25,22 +25,14 @@
            sync-j="4" />
 
  <!-- AospExtended -->
-  <project name="platform_build" path="build" groups="pdk,tradefed" remote="ex" >
+  <project name="G3-aosp-N/platform_build" path="build" groups="pdk,tradefed" remote="github" revision="aosp-7.1.1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="vendor/aosp" name="platform_vendor_aosp" remote="ex" />
-  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" groups="pdk-fs" remote="ex" />
-  <project path="packages/apps/Extensions" name="platform_packages_apps_Extensions" groups="pdk-fs" remote="ex" />
-  <project path="packages/apps/AEXOTA" name="platform_packages_apps_AEXOTA" groups="pdk-fs" remote="ex" />
-  <project path="packages/apps/AEXPapers" name="platform_packages_apps_AEXPapers" groups="pdk-fs" remote="ex" />
-  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="ex" />
+  <project path="packages/apps/Settings" name="G3-aosp-N/platform_packages_apps_Settings" groups="pdk-fs" remote="github" revision="aosp-7.1.1" />
+  <project path="frameworks/base" name="G3-aosp-N/platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="github" revision="aosp-7.1.1" />
   <project path="hardware/libhardware" name="platform_hardware_libhardware" groups="pdk-fs" remote="ex" />
   <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="ex" />
   <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="ex" />
-  <project path="packages/apps/LockClock" name="platform_packages_apps_LockClock" remote="ex" />
-  <project path="packages/apps/DUI" name="platform_packages_apps_DUI" remote="ex" />
-  <project path="external/DUtils" name="platform_external_DUtils" remote="ex" />
-  <project path="packages/apps/OmniStyle" name="platform_packages_apps_OmniStyle" remote="ex" />
   <project path="frameworks/av" name="platform_frameworks_av" groups="pdk" remote="ex" />
   <project path="packages/providers/MediaProvider" name="platform_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="ex" />
   <project path="system/core" name="platform_system_core" groups="pdk" remote="ex" />
@@ -76,7 +68,6 @@
   <project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" groups="pdk" remote="ex" />
   <project path="frameworks/support" name="platform_frameworks_support" groups="pdk-cw-fs,pdk-fs" remote="ex" />
   <project path="libcore" name="platform_libcore" groups="pdk"  remote="ex" />
-  <project path="packages/apps/AudioFX" name="platform_packages_apps_AudioFX" groups="pdk-fs" remote="ex" />
   <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="ex" />
   <project path="packages/apps/Browser" name="platform_packages_apps_Browser" remote="ex" />
   <project path="packages/apps/Camera2" name="platform_packages_apps_Camera2" groups="pdk-fs" remote="ex" />
@@ -509,40 +500,18 @@
   <project path="hardware/libhardware_legacy" name="platform_hardware_libhardware_legacy" groups="pdk" remote="ex" />
   <project path="hardware/ril" name="platform_hardware_ril" groups="pdk" remote="ex" />
   <project path="hardware/ril-caf" name="platform_hardware_ril" groups="pdk" remote="ex" revision="7.1.1-caf" />
-  <project path="hardware/qcom/audio/default" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="cm-14.1" remote="github" />
-  <project path="hardware/qcom/audio-caf/apq8084" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8084" />
-  <project path="hardware/qcom/audio-caf/msm8916" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8916" />
-  <project path="hardware/qcom/audio-caf/msm8937" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8937" />
-  <project path="hardware/qcom/audio-caf/msm8952" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8952" />
-  <project path="hardware/qcom/audio-caf/msm8960" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8960" />
-  <project path="hardware/qcom/audio-caf/msm8974" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8974" />
-  <project path="hardware/qcom/audio-caf/msm8994" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8994" />
-  <project path="hardware/qcom/audio-caf/msm8996" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-14.1-caf-8996" />
+  <project path="hardware/qcom/audio" name="AOSPlusone/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="nougat-7.1" remote="github" />
   <project path="hardware/qcom/bootctrl" name="platform/hardware/qcom/bootctrl" groups="pdk" />
   <project path="hardware/qcom/bt" name="lineageos/android_hardware_qcom_bt" groups="qcom" remote="github" revision="cm-14.1" />
   <project path="hardware/qcom/bt-caf" name="lineageos/android_hardware_qcom_bt" groups="qcom" remote="github" revision="cm-14.1-caf" />
   <project path="hardware/qcom/camera" name="platform_hardware_qcom_camera" groups="qcom" remote="ex" />
   <project path="hardware/qcom/display" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="cm-14.1" remote="github" />
-  <project path="hardware/qcom/display-caf/apq8084" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8084" />
-  <project path="hardware/qcom/display-caf/msm8916" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8916" />
-  <project path="hardware/qcom/display-caf/msm8937" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8937" />
-  <project path="hardware/qcom/display-caf/msm8952" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8952" />
-  <project path="hardware/qcom/display-caf/msm8960" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8960" />
   <project path="hardware/qcom/display-caf/msm8974" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8974" />
-  <project path="hardware/qcom/display-caf/msm8994" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8994" />
-  <project path="hardware/qcom/display-caf/msm8996" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8996" />
   <project path="hardware/qcom/fm" name="lineageos/android_hardware_qcom_fm" groups="qcom,qcom_fm" revision="cm-14.1" remote="github" />
   <project path="hardware/qcom/gps" name="platform_hardware_qcom_gps" groups="qcom,qcom_gps" remote="ex" />
   <project path="hardware/qcom/keymaster" name="platform_hardware_qcom_keymaster" groups="qcom,qcom_keymaster" remote="ex" />
   <project path="hardware/qcom/media" name="lineageos/android_hardware_qcom_media" groups="qcom" revision="cm-14.1" remote="github" />
-  <project path="hardware/qcom/media-caf/apq8084" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8084" />
-  <project path="hardware/qcom/media-caf/msm8916" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8916" />
-  <project path="hardware/qcom/media-caf/msm8937" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8937" />
-  <project path="hardware/qcom/media-caf/msm8952" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8952" />
-  <project path="hardware/qcom/media-caf/msm8960" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8960" />
   <project path="hardware/qcom/media-caf/msm8974" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8974" />
-  <project path="hardware/qcom/media-caf/msm8994" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8994" />
-  <project path="hardware/qcom/media-caf/msm8996" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8996" />
   <project path="hardware/qcom/wlan" name="lineageos/android_hardware_qcom_wlan" groups="qcom_wlan" remote="github" revision="cm-14.1" />
   <project path="hardware/qcom/wlan-caf" name="platform_hardware_qcom_wlan" groups="qcom_wlan" remote="ex" revision="7.1.1-caf" />
 
@@ -566,5 +535,10 @@
   <project path="packages/apps/masquerade" name="TeamSubstratum/masquerade" remote="github" revision="n" />
   <project path="external/google" name="AOSIP/platform_external_google" remote="github" revision="n7x" />
 
+  <!-- D855 Device tree -->
+  <project path="device/lge/g3-common" name="G3-aosp-n/android_device_lge_g3-common" remote="github" revision="aosp-7.1.1" />
+  <project path="device/lge/d855" name="G3-aosp-n/android_device_lge_d855" remote="github" revision="aosp-7.1.1" />
+  <project path="kernel/lge/g3" name="G3-aosp-n/android_kernel_lge_g3" remote="github" revision="aosp-7.1.1-update" />
+  <project path="vendor/lge" name="TheMuppets/proprietary_vendor_lge" remote="github" revision="cm-14.1" />
 
 </manifest>
