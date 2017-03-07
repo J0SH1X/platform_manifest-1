@@ -20,10 +20,10 @@
            revision="cm-14.1" />
 
 
-  <default revision="refs/tags/android-7.1.1_r22"
+  <default revision="refs/tags/android-7.1.1_r28"
            remote="aosp"
            sync-c="true"
-           sync-j="4" />
+           sync-j="8" />
 
  <!-- AOSP-D855 -->
   <project name="G3-aosp-N/platform_build" path="build" groups="pdk,tradefed" remote="github" revision="aosp-7.1.1" >
