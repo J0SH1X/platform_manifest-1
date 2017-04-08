@@ -1,4 +1,4 @@
-The Android Open Source Project For LG G3 D855 - Nougat 7.1.1
+The Android Open Source Project For LG G3 D855 - Nougat 7.1.2
 ===========
 
 
@@ -9,7 +9,7 @@ To get started with Android, you'll need to get familiar with [Git and Repo](htt
 
 To initialize your local repository using the AOSP trees, use a command like this:
 
-    repo init -u git://github.com/G3-aosp-N/platform_manifest.git -b aosp-7.1.1
+    repo init -u git://github.com/G3-aosp-N/platform_manifest.git -b aosp-7.1.2
 
 Then to sync up:
 
