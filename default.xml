@@ -13,44 +13,51 @@
 
   <remote  name="g3-aosp"
            fetch="https://github.com/G3-aosp-N"
-           revision="7.1.1" />
+           revision="aosp-7.1.2" />
   
+  <remote  name="AospExtended"
+           fetch="https://github.com/AospExtended"
+           revision="7.x-beta" />
+
   <remote  name="cm"
+           fetch="https://github.com/invisiblek"
+           revision="cm-14.1_android-7.1.2_r2" />
+
+  <remote  name="cm_old"
            fetch="https://github.com/lineageos"
            revision="cm-14.1" />
 
-
-  <default revision="refs/tags/android-7.1.1_r38"
+  <default revision="refs/tags/android-7.1.2_r2"
            remote="aosp"
            sync-c="true"
            sync-j="8" />
 
  <!-- AOSP-D855 -->
-  <project name="G3-aosp-N/platform_build" path="build" groups="pdk,tradefed" remote="github" revision="aosp-7.1.1" >
+  <project name="platform_build" path="build" groups="pdk,tradefed" remote="g3-aosp" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="packages/apps/Settings" name="G3-aosp-N/platform_packages_apps_Settings" groups="pdk-fs" remote="github" revision="aosp-7.1.1" />
-  <project path="frameworks/base" name="G3-aosp-N/platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="github" revision="aosp-7.1.1" />
-  <project path="hardware/libhardware" name="G3-aosp-N/platform_hardware_libhardware" groups="pdk-fs" remote="github" revision="aosp-7.1.1" />
-  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="g3-aosp" />
+  <project path="packages/apps/Settings" name="G3-aosp-N/platform_packages_apps_Settings" groups="pdk-fs" remote="github" revision="aosp-7.1.2" />
+  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="g3-aosp" />
+  <project path="hardware/libhardware" name="AospExtended/platform_hardware_libhardware" groups="pdk-fs" remote="github" revision="7.x-beta" />
+  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="AospExtended" />
   <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" groups="pdk-fs" />
   <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="cm" />
-  <project path="packages/providers/MediaProvider" name="G3-aosp-N/platform_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="github" revision="aosp-7.1.1" />
-  <project path="system/core" name="platform_system_core" groups="pdk" remote="g3-aosp" revision="aosp-7.1.1" />
-  <project path="packages/apps/Dialer" name="G3-aosp-N/platform_packages_apps_Dialer" groups="pdk-fs" remote="github" revision="aosp-7.1.1" />
-  <project path="packages/apps/Messaging" name="G3-aosp-N/platform_packages_apps_Messaging" groups="pdk-fs" remote="github" revision="aosp-7.1.1" />
-  <project path="packages/services/Telephony" name="G3-aosp-N/platform_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="github" revision="aosp-7.1.1" />
+  <project path="packages/providers/MediaProvider" name="platform_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="g3-aosp" />
+  <project path="system/core" name="platform_system_core" groups="pdk" remote="AospExtended" />
+  <project path="packages/apps/Dialer" name="platform_packages_apps_Dialer" groups="pdk-fs" remote="g3-aosp" />
+  <project path="packages/apps/Messaging" name="platform_packages_apps_Messaging" groups="pdk-fs" remote="g3-aosp" />
+  <project path="packages/services/Telephony" name="platform_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="g3-aosp" />
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
   <project path="art" name="platform/art" groups="pdk" />
-  <project path="bionic" name="platform_bionic" groups="pdk" remote="g3-aosp" />
-  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="g3-aosp" />
-  <project path="device/qcom/sepolicy" name="platform_device_qcom_sepolicy" remote="g3-aosp" />
+  <project path="bionic" name="platform_bionic" groups="pdk" remote="AospExtended" />
+  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="AospExtended" />
+  <project path="device/qcom/sepolicy" name="platform_device_qcom_sepolicy" remote="g3-aosp" revision="7.1.1" />
   <project path="external/android-clat" name="platform/external/android-clat" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
-  <project path="external/busybox" name="android_external_busybox" remote="cm" />
+  <project path="external/busybox" name="android_external_busybox" remote="cm_old" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
   <project path="external/chromium-webview" name="platform/external/chromium-webview" groups="pdk" />
-  <project path="external/connectivity" name="android_external_connectivity" remote="cm" />
+  <project path="external/connectivity" name="android_external_connectivity" remote="cm_old" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="pdk" />
   <project path="external/ipsec-tools" name="android_external_ipsec-tools" groups="pdk-cw-fs,pdk-fs" remote="cm" />
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk" />
@@ -59,40 +66,40 @@
   <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
   <project path="external/okhttp" name="android_external_okhttp" groups="pdk-cw-fs,pdk-fs" remote="cm" />
   <project path="external/skia" name="platform/external/skia" groups="pdk-cw-fs,qcom_msm8x26" />
-  <project path="external/stlport" name="android_external_stlport" remote="cm" />
+  <project path="external/stlport" name="android_external_stlport" remote="cm_old" />
   <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="pdk" />
-  <project path="external/tinycompress" name="android_external_tinycompress" groups="pdk" remote="cm" />
+  <project path="external/tinycompress" name="android_external_tinycompress" groups="pdk" remote="cm_old" />
   <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="pdk" />
-  <project path="external/yaffs2" name="android_external_yaffs2" groups="pdk" remote="cm" />
+  <project path="external/yaffs2" name="android_external_yaffs2" groups="pdk" remote="cm_old" />
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
-  <project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" groups="pdk" remote="g3-aosp" />
-  <project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" groups="pdk" remote="g3-aosp" />
+  <project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" groups="pdk" remote="AospExtended" />
+  <project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" groups="pdk" remote="AospExtended" />
   <project path="frameworks/support" name="android_frameworks_support" groups="pdk-cw-fs,pdk-fs" remote="cm" />
   <project path="libcore" name="android_libcore" groups="pdk"  remote="cm" />
-  <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="g3-aosp" />
+  <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="AospExtended" />
   <project path="packages/apps/Browser2" name="platform/packages/apps/Browser2" />
   <project path="packages/apps/Snap" name="LineageOS/android_packages_apps_Snap" groups="pdk-fs" remote="github" revision="cm-14.1" />
-  <project path="packages/apps/CarrierConfig" name="platform_packages_apps_CarrierConfig" groups="pdk-fs" remote="g3-aosp" />
+  <project path="packages/apps/CarrierConfig" name="platform_packages_apps_CarrierConfig" groups="pdk-fs" remote="AospExtended" />
   <project path="packages/apps/CellBroadcastReceiver" name="android_packages_apps_CellBroadcastReceiver" groups="pdk-fs" remote="cm" />
-  <project path="packages/apps/Contacts" name="platform_packages_apps_Contacts" groups="pdk-fs" remote="g3-aosp" />
-  <project path="packages/apps/ContactsCommon" name="platform_packages_apps_ContactsCommon" groups="pdk-fs" remote="g3-aosp" />
+  <project path="packages/apps/Contacts" name="platform_packages_apps_Contacts" groups="pdk-fs" remote="AospExtended" />
+  <project path="packages/apps/ContactsCommon" name="platform_packages_apps_ContactsCommon" groups="pdk-fs" remote="AospExtended" />
   <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" groups="pdk-fs" />
   <project path="packages/apps/Gallery2" name="platform/packages/apps/Gallery2" groups="pdk-fs" />
   <project path="packages/apps/Launcher3" name="platform/packages/apps/Launcher3" groups="pdk-fs" />
   <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" groups="pdk-fs" remote="cm" />
   <project path="packages/apps/PhoneCommon" name="android_packages_apps_PhoneCommon" groups="pdk-cw-fs,pdk-fs" remote="cm" />
   <project path="packages/apps/Stk" name="platform_packages_apps_Stk" groups="apps_stk,pdk-fs" remote="g3-aosp" />
-  <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" groups="pdk-fs" remote="cm" />
+  <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" groups="pdk-fs" remote="cm_old" />
   <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" groups="pdk-cw-fs,pdk-fs" remote="cm" />
   <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="cm" />
-  <project path="packages/providers/TelephonyProvider" name="platform_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" remote="g3-aosp" />
-  <project path="packages/services/Telecomm" name="G3-aosp-N/platform_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="github" revision="aosp-7.1.1" />
-  <project path="system/bt" name="platform_system_bt" groups="pdk" remote="g3-aosp" />
-  <project path="system/extras" name="platform_system_extras" groups="pdk" remote="g3-aosp" />
-  <project path="system/media" name="platform_system_media" groups="pdk" remote="g3-aosp" revision="aosp-7.1.1" />
-  <project path="system/netd" name="platform_system_netd" groups="pdk" remote="g3-aosp" />
-  <project path="system/sepolicy" name="platform_system_sepolicy" groups="pdk" remote="g3-aosp" />
-  <project path="system/vold" name="platform_system_vold" groups="pdk" remote="g3-aosp" />
+  <project path="packages/providers/TelephonyProvider" name="platform_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" remote="AospExtended" />
+  <project path="packages/services/Telecomm" name="platform_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="g3-aosp" />
+  <project path="system/bt" name="platform_system_bt" groups="pdk" remote="AospExtended" />
+  <project path="system/extras" name="platform_system_extras" groups="pdk" remote="AospExtended" />
+  <project path="system/media" name="platform_system_media" groups="pdk" remote="AospExtended" />
+  <project path="system/netd" name="platform_system_netd" groups="pdk" remote="AospExtended" />
+  <project path="system/sepolicy" name="platform_system_sepolicy" groups="pdk" remote="AospExtended" />
+  <project path="system/vold" name="platform_system_vold" groups="pdk" remote="AospExtended" />
 
 
 
@@ -430,7 +437,7 @@
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" />
   <project path="system/firewalld" name="platform/system/firewalld" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
-  <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" />
+  <project path="system/keymaster" name="platform_system_keymaster" groups="pdk" remote="g3-aosp" />
   <project path="system/nativepower" name="platform/system/nativepower" />
   <project path="system/nvram" name="platform/system/nvram" />
   <project path="system/security" name="platform/system/security" groups="pdk" />
@@ -476,7 +483,7 @@
   <project path="external/protobuf-c" name="lineageos/android_external_protobuf-c" remote="github" revision="cm-14.1" />
   <project path="external/stagefright-plugins" name="lineageos/android_external_stagefright-plugins" remote="github" revision="cm-14.1" />
   <project path="external/wpa_supplicant_8" name="lineageos/android_external_wpa_supplicant_8" groups="pdk" remote="github" revision="cm-14.1" />
-  <project path="frameworks/opt/net/ims" name="lineageos/android_frameworks_opt_net_ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="github" revision="cm-14.1" />
+  <project path="frameworks/opt/net/ims" name="platform_frameworks_opt_net_ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="g3-aosp" />
   <project path="packages/apps/Nfc" name="lineageos/android_packages_apps_Nfc" remote="github" revision="cm-14.1" />
   <project path="system/qcom" name="lineageos/android_system_qcom" groups="qcom" remote="github" revision="cm-14.1" />
   <project path="packages/apps/Eleven" name="lineageos/android_packages_apps_Eleven" remote="github" revision="cm-14.1" />
@@ -497,9 +504,9 @@
   <project path="hardware/broadcom/wlan" name="android_hardware_broadcom_wlan" groups="pdk,broadcom_wlan" remote="cm" />
   <project path="hardware/google/apf" name="platform/hardware/google/apf" groups="pdk" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
-  <project path="hardware/libhardware_legacy" name="G3-aosp-N/platform_hardware_libhardware_legacy" groups="pdk" remote="github" revision="aosp-7.1.1" />
+  <project path="hardware/libhardware_legacy" name="platform_hardware_libhardware_legacy" groups="pdk" remote="g3-aosp" revision="aosp-7.1.1" />
   <project path="hardware/ril" name="platform_hardware_ril" groups="pdk" remote="g3-aosp" />
-  <project path="hardware/ril-caf" name="platform_hardware_ril" groups="pdk" remote="g3-aosp" revision="7.1.1-caf" />
+  <project path="hardware/ril-caf" name="platform_hardware_ril" groups="pdk" remote="g3-aosp" revision="7.1.2-caf" />
   <project path="hardware/qcom/audio/default" name="lineageos/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="cm-14.1" remote="github" />
   <project path="hardware/qcom/bootctrl" name="platform/hardware/qcom/bootctrl" groups="pdk" />
   <project path="hardware/qcom/bt" name="lineageos/android_hardware_qcom_bt" groups="qcom" remote="github" revision="cm-14.1" />
@@ -510,7 +517,7 @@
   <project path="hardware/qcom/display-caf/msm8974" name="lineageos/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-14.1-caf-8974" />
   <project path="hardware/qcom/fm" name="lineageos/android_hardware_qcom_fm" groups="qcom,qcom_fm" revision="cm-14.1" remote="github" />
   <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" groups="qcom,qcom_gps" />
-  <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster" remote="cm" />
+  <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster" remote="cm_old" />
   <project path="hardware/qcom/media" name="lineageos/android_hardware_qcom_media" groups="qcom" revision="cm-14.1" remote="github" />
   <project path="hardware/qcom/media-caf/msm8974" name="lineageos/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8974" />
   <project path="hardware/qcom/wlan" name="lineageos/android_hardware_qcom_wlan" groups="qcom_wlan" remote="github" revision="cm-14.1" />
