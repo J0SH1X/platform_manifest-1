@@ -557,4 +557,13 @@
   <project path="kernel/lge/g3" name="G3-aosp-n/android_kernel_lge_g3" remote="github" revision="cm-14.1" />
   <project path="vendor/lge" name="proprietary_vendor_lge" remote="g3-aosp" revision="cm-14.1" />
 
+
+<!-- klte Device Tree -->
+<project path="device/samsung/klte" name="android_device_samsung_klte" remote="g3-aosp" revision="aosp-7.1.2" />
+<project path="device/samsung/klte-common" name="android_device_samsung_klte-common" remote="g3-aosp" revision="aosp-7.1.2" />
+<project path="kernel/samsung/klte" name="android_kernel_samsung_klte" remote="cm" revision="cm-14.1" />
+<project path="hardware/samsung/klte" name="android_kernel_samsung_klte" remote="cm" revision="cm-14.1" />
+<project path="hardware/samsung" name="android_hardware_samsung" remote="cm" revision="cm-14.1" />
+<project path="device/samsung/msm8974-common" name="android_device_samsung_msm8974-common" remote="cm" revision="cm-14.1" />
+<project path="device/samsung/qcom-common" name="android_device_samsung_qcom-common" remote="cm" revision="cm-14.1" />
 </manifest>
