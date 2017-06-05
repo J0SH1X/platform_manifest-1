@@ -565,7 +565,7 @@
 <project path="hardware/samsung/klte" name="android_kernel_samsung_klte" remote="cm" revision="cm-14.1" />
 <project path="hardware/samsung" name="android_hardware_samsung" remote="cm" revision="cm-14.1" />
 <project path="device/samsung/msm8974-common" name="android_device_samsung_msm8974-common" remote="cm" revision="cm-14.1" />
-<project path="device/samsung/qcom-common" name="android_device_samsung_qcom-common" remote="cm" revision="cm-14.1" />
+<project path="device/samsung/qcom-common" name="android_device_samsung_qcom-common" remote="g3-aosp" revision="aosp-7.1.2" />
 <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="github" revision="cm-14.1" />
 
 </manifest>
