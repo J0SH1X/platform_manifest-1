@@ -27,7 +27,7 @@
            fetch="https://github.com/AOSP-JF-MM"
            revision="aosp-7.1.2" />
 
-  <default revision="refs/tags/android-7.1.2_r17"
+  <default revision="master"
            remote="aosp"
            sync-c="true"
            sync-j="8" />
